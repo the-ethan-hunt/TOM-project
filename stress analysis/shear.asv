@@ -1,0 +1,18 @@
+function [ X ] = shear( cs,ss,d,t)
+%SHEAR Summary of this function goes here
+%   Detailed explanation goes here
+%   We are finding the the maximum punch force required to punch the holes
+%   d is diameter of the blank, t is the thickness of the strip
+%   ss is the shear strength of the given material
+%   cs is the compressive strenght of the material
+%   Calculating the force (theoretical)
+F= ss*pi*d*t;
+
+%   Calculating the maximum punch force
+sig = 2*ss;
+Fmax = 0.7*sig*t*pi*d;
+X= ['the theoretical punching force is ',num2str(F),' while the maximum force required is ',num2str(Fmax)];
+disp(X);
+
+end
+
